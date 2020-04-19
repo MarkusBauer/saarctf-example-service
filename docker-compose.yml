@@ -1,0 +1,15 @@
+---
+
+# This docker-compose file is solely for you to test your service. Feel free to change anything.
+# Use "docker-compose up -d" to install and run your service locally.
+# Only necessary adjustment: add your name and port.
+
+version: "2"
+
+services:
+  service:
+    image: "saarsec/exampleservice"  # TODO adjust name
+    volumes:
+      - "./docker-container-infos.txt:/tmp/machine-infos.txt"
+    ports:
+      - "31337:31337"  # TODO service ports to expose (notation: "hostport:serviceport")

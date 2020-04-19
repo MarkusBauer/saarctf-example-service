@@ -1,0 +1,12 @@
+# Gitlab CI Configuration
+# Usually defaults are fine.
+
+
+include:
+  - project: 'saarctf/gamelib'
+    file: '/ci/service.gitlab-ci.yml'
+
+
+# Uncomment if you need another docker image for your build
+# build:
+#   image: saarsec/saarctf-ci-base:latest
