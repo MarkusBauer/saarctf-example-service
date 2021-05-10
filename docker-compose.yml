@@ -10,6 +10,6 @@ services:
   service:
     image: "saarsec/exampleservice"  # TODO adjust name
     volumes:
-      - "./docker-container-infos.txt:/tmp/machine-infos.txt"
+      - "./docker-container-infos.txt:/machine-infos.txt"
     ports:
       - "31337:31337"  # TODO service ports to expose (notation: "hostport:serviceport")
