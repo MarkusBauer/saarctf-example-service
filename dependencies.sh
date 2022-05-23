@@ -4,7 +4,7 @@ set -eux
 
 # Install all your checkerscript / exploit dependencies
 # Please prefer Debian packages over pip (for stability reasons)
-# OS will be Debian Buster.
+# OS will be Debian Bullseye.
 # Already installed python modules are:
 # - redis
 # - requests

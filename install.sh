@@ -45,7 +45,7 @@ service-add-simple "socat -s -T10 TCP-LISTEN:31337,reuseaddr,fork EXEC:bash,pty,
 # Example: Initialize Databases (PostgreSQL example)
 
 # Example: 5. Startup database (CI DOCKER ONLY, not on vulnbox)
-# if grep -q docker /proc/1/cgroup; then
+# if detect-docker; then
 #     EXAMPLE for PostgreSQL: pg_ctlcluster 11 main start
 # fi
 
@@ -54,6 +54,6 @@ service-add-simple "socat -s -T10 TCP-LISTEN:31337,reuseaddr,fork EXEC:bash,pty,
 # sudo -u postgres psql -v ON_ERROR_STOP=1 -f "/tmp/init.sql"
 
 # Example: 7 Stop services (CI DOCKER ONLY)
-# if grep -q docker /proc/1/cgroup; then
+# if detect-docker; then
 #     pg_ctlcluster 11 main stop
 # fi
