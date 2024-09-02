@@ -16,8 +16,8 @@ set -eux
 # - pytz
 
 # uncomment for APT
-# apt update
-# apt install -y python3-requests
+# apt-get update
+# apt-get install -y python3-requests
 
 # uncommnent for pip
 # python3 -m pip install requests

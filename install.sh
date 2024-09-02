@@ -15,7 +15,9 @@ apt-get install -y socat
 
 # 2. TODO Copy/move files
 mv service/* "$INSTALL_DIR/"
-chown -R "$SERVICENAME:$SERVICENAME" "$INSTALL_DIR"
+mkdir -p "$INSTALL_DIR/data"
+chown -R "root:root" "$INSTALL_DIR"  # service code: read-only
+chown -R "$SERVICENAME:$SERVICENAME" "$INSTALL_DIR/data"  # service data: read-write
 
 # 3. TODO Configure the server
 # ...
@@ -35,7 +37,7 @@ chown -R "$SERVICENAME:$SERVICENAME" "$INSTALL_DIR"
 # Install backend as systemd service
 # Hint: you can use "service-add-simple '<command>' '<working directory>' '<description>'"
 # service-add-simple "$INSTALL_DIR/TODO-your-script-that-should-be-started.sh" "$INSTALL_DIR/" "<TODO>"
-service-add-simple "socat -s -T10 TCP-LISTEN:31337,reuseaddr,fork EXEC:bash,pty,stderr,setsid,sigint,sane" "$INSTALL_DIR/" "<TODO>"
+service-add-simple "socat -s -T10 TCP-LISTEN:31337,reuseaddr,fork EXEC:bash,pty,stderr,setsid,sigint,sane" "$INSTALL_DIR/data" "<TODO>"
 
 # Example: Cronjob that removes stored files after a while
 # cronjob-add "*/6 * * * * find $INSTALL_DIR/data -mmin +45 -type f -delete"
