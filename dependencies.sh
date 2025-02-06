@@ -2,22 +2,10 @@
 
 set -eux
 
-# Install all your checkerscript / exploit dependencies
-# Please prefer Debian packages over pip (for stability reasons)
-# OS will be Debian Bullseye.
-# Already installed python modules are:
-# - redis
-# - requests
-# - pwntools
-# - numpy
-# - pycryptodome
-# - psutil
-# - bs4
-# - pytz
+# NOT FOR PYTHON/PIP DEPENDENCIES!
+# add them to checker-requirements.txt instead!
 
-# uncomment for APT
+# Install all your system-level checkerscript / exploit dependencies if necessary.
+
 # apt-get update
 # apt-get install -y python3-requests
-
-# uncommnent for pip
-# python3 -m pip install requests

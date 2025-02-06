@@ -7,11 +7,9 @@ from gamelib import *
 
 
 class ExampleServiceInterface(ServiceInterface):
-    name = 'ExampleService'
-
-    def check_integrity(self, team: Team, tick: int):
+    def check_integrity(self, team: Team, tick: int) -> None:
         # pwntools "Could not connect" exception is accepted as OFFLINE
-        with remote_connection(team.ip, 31337) as conn:  # use remote_connection instead of raw "remote()"
+        with remote_connection(team.ip, 31337) as conn:  # use remote_connection instead of raw "remote()" or sockets
             conn.sendline(b'id ; exit')
             data = conn.recvall()
             # check for conditions - if an assert fails the service status is MUMBLE
@@ -20,13 +18,13 @@ class ExampleServiceInterface(ServiceInterface):
         # session = Session()  # use gamelib's session
         # response = assert_requests_response(session.get(f'http://{team.ip}:31337/'), 'text/html; charset=utf-8')
 
-    def store_flags(self, team: Team, tick: int):
+    def store_flags(self, team: Team, tick: int) -> None:
         flag = self.get_flag(team, tick)
         with remote_connection(team.ip, 31337) as conn:
             conn.sendline(f"echo 'TICK {tick}: {flag}' >> data.txt ; exit".encode())
             conn.recvall()
 
-    def retrieve_flags(self, team: Team, tick: int):
+    def retrieve_flags(self, team: Team, tick: int) -> None:
         flag = self.get_flag(team, tick)
         with remote_connection(team.ip, 31337) as conn:
             conn.sendline(f"grep 'TICK {tick}:' data.txt ; exit".encode())
@@ -45,7 +43,7 @@ if __name__ == '__main__':
     # USAGE: python3 interface.py 1.2.3.4 store        # store a few ticks (for exploits relying on checker interaction)
     # (or use gamelib/run-checkers to test against docker container)
     team = Team(1, 'TestTeam', sys.argv[1] if len(sys.argv) > 1 else '127.0.0.1')
-    service = ExampleServiceInterface(1)
+    service = ExampleServiceInterface()
 
     if len(sys.argv) > 2 and sys.argv[2] == 'retrieve':
         for tick in range(1, 10):

@@ -3,3 +3,4 @@
 /public/
 /build_output/
 /docker-container-infos.txt
+/checker_venv

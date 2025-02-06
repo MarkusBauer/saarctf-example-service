@@ -1,9 +1,9 @@
-![last update](http://yourgitlabuser.gitlab-pages.saarsec.rocks/yourservicename/ci-update.svg)
+![last update](http://gitlab.saarsec.rocks/gitlab-pages/yourgitlabuser/yourservicename/ci-update.svg)
 ![pipeline status](https://gitlab.saarsec.rocks/YourGitlabUser/yourservicename/badges/master/pipeline.svg)
-![build](http://yourgitlabuser.gitlab-pages.saarsec.rocks/yourservicename/ci-build.svg)
-![install](http://yourgitlabuser.gitlab-pages.saarsec.rocks/yourservicename/ci-install.svg)
-![checkers](http://yourgitlabuser.gitlab-pages.saarsec.rocks/yourservicename/ci-checkers.svg)
-![exploits](http://yourgitlabuser.gitlab-pages.saarsec.rocks/yourservicename/ci-exploits.svg)
+![build](http://gitlab.saarsec.rocks/gitlab-pages/yourgitlabuser/yourservicename/ci-build.svg)
+![install](http://gitlab.saarsec.rocks/gitlab-pages/yourgitlabuser/yourservicename/ci-install.svg)
+![checkers](http://gitlab.saarsec.rocks/gitlab-pages/yourgitlabuser/yourservicename/ci-checkers.svg)
+![exploits](http://gitlab.saarsec.rocks/gitlab-pages/yourgitlabuser/yourservicename/ci-exploits.svg)
 
 `TODO` please edit logo URLs (above) after fork to get badges working
 

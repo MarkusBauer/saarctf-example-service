@@ -1,0 +1,15 @@
+# name as written on the scoreboard
+name = "ExampleService"
+ports = ["tcp:31337"]
+
+# Your checkerscript
+interface_file = "interface.py"
+interface_class = "ExampleServiceInterface"
+
+# How many flags/payloads do you store?
+num_payloads = 1
+flags_per_tick = 1
+
+# Flag IDs.
+# For example: 'username', 'hex<number>', 'alphanum<number>', 'email', 'pattern:${username}/constant_string/${hex12}'
+# flag_ids = []
