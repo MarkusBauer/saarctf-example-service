@@ -16,7 +16,7 @@ apt-get install -y socat
 # 2. TODO Copy/move files
 mv service/* "$INSTALL_DIR/"
 mkdir -p "$INSTALL_DIR/data"
-chown -R "root:root" "$INSTALL_DIR"  # service code: read-only
+chown -R "root:$SERVICENAME" "$INSTALL_DIR"  # service code: read-only
 chown -R "$SERVICENAME:$SERVICENAME" "$INSTALL_DIR/data"  # service data: read-write
 
 # 3. TODO Configure the server
